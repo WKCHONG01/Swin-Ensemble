@@ -1,3 +1,4 @@
+
 # Swin-Ensemble
 
 ## PlantTraits2024 - FGVC11
@@ -18,5 +19,5 @@ The R2 can result in large negative values. To prevent that we will only conside
 
 ## Proposed Method
 Ensemble method with the combination of Swin Transformer and Self Attention Layers. Further details are shown in the diagram below:
-
+![ML](https://github.com/WKCHONG01/Swin-Ensemble/assets/100023394/01c19f01-4115-4cb4-8ffc-f6d75be62422)
 
