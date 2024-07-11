@@ -1,0 +1,14 @@
+numpy==1.26.3
+pandas==2.2.1
+matplotlib==3.8.3
+imageio==2.34.2
+albumentations==1.4.10
+torch --index-url https://download.pytorch.org/whl/cu118
+torchvision --index-url https://download.pytorch.org/whl/cu118
+torchaudio --index-url https://download.pytorch.org/whl/cu118
+scikit-learn==1.5.0
+transformers
+psutil
+argparse
+
+
