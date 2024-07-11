@@ -28,9 +28,12 @@ Place the Swin-Ensemble.py files into the a folder with the dataset.
 
 
 Before running the python file, make sure your file directory is in the folder that contains both the dataset and the python file.
+
 --train for training the model with the train dataset
+
 --test for evaluating the model with the test dataset
 
 In the ./checkpoint folder, it contains all the trained models weights. 
+
 The submission.csv file is the output from the test dataset.
 
