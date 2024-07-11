@@ -437,7 +437,6 @@ def main(args):
         train['jpeg_bytes'] = train['file_path'].progress_apply(lambda fp: open(fp, 'rb').read())
         train.to_pickle('./train.pkl')
         logger.warning("train data pkl saved")
-    logger.warning("train data gaodim")
     for column in CONFIG.TARGET_COLUMNS:
         lower_quantile = train[column].quantile(0.005)
         upper_quantile = train[column].quantile(0.985)
@@ -458,7 +457,6 @@ def main(args):
         test['jpeg_bytes'] = test['file_path'].progress_apply(lambda fp: open(fp, 'rb').read())
         test.to_pickle('./test.pkl')
         logger.warning("test data pkl saved")
-    logger.warning(" test data gaodim")
     logger.info('N_TRAIN_SAMPLES:', len(train), 'N_TEST_SAMPLES:', len(test))
     LOG_FEATURES = ['X4_mean', 'X11_mean', 'X18_mean', 'X50_mean', 'X26_mean', 'X3112_mean']
     logger.warning(" transforming y_train")
@@ -471,8 +469,6 @@ def main(args):
 
     SCALER = StandardScaler()
     y_train = SCALER.fit_transform(y_train)
-    logger.warning(" y_train gaodim")
-    logger.warning(" x_mlp_train")
     DROP_COLUMNS = ['id','X4_mean', 'X11_mean', 'X18_mean', 'X50_mean', 'X26_mean', 'X3112_mean','file_path','jpeg_bytes']
     columns_to_keep = train.columns[~train.columns.isin(DROP_COLUMNS)]
     train.fillna(0,inplace=True)
@@ -482,7 +478,6 @@ def main(args):
     mlp_scaler_train = StandardScaler()
     x_MLP_scaled_train = mlp_scaler_train.fit_transform(x_MLP_train)
     logger.info(x_MLP_scaled_train.shape)
-    logger.warning(" x_mlp_test")
     DROP_COLUMNS = ['id','X4_mean', 'X11_mean', 'X18_mean', 'X50_mean', 'X26_mean', 'X3112_mean','file_path','jpeg_bytes']
     columns_to_keep = test.columns[~test.columns.isin(DROP_COLUMNS)]
     x_MLP_test = test[columns_to_keep]
@@ -491,7 +486,6 @@ def main(args):
     mlp_scaler_test = StandardScaler()
     x_MLP_scaled_test = mlp_scaler_test.fit_transform(x_MLP_test)
     logger.info(x_MLP_scaled_test.shape)
-    logger.warning(" all gaodim")
     MEAN = [0.485, 0.456, 0.406]
     STD = [0.229, 0.224, 0.225]
 
@@ -535,7 +529,6 @@ def main(args):
         test['id'].values,
         TEST_TRANSFORMS,
     )
-    logger.warning("data gaodim")
     if args.train:
 
         if os.path.exists("./checkpoint/latest_model-001.pth"):
