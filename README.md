@@ -21,4 +21,16 @@ The R2 can result in large negative values. To prevent that we will only conside
 Ensemble method with the combination of Swin Transformer and Self Attention Layers. Further details are shown in the diagram below:
 ![ML](https://github.com/WKCHONG01/Swin-Ensemble/assets/100023394/bdb07c2b-6d82-4874-b7f4-7b9195209068)
 
+## How to run
+### Please login your KAGGLE account to download the planttraits dataset (https://www.kaggle.com/competitions/planttraits2024/data)
+Place the Swin-Ensemble.py files into the a folder with the dataset.
+![Screenshot 2024-07-11 111735](https://github.com/WKCHONG01/Swin-Ensemble/assets/100023394/8d05aa5b-e833-4938-9a49-0e0ea24218da)
+
+
+Before running the python file, make sure your file directory is in the folder that contains both the dataset and the python file.
+--train for training the model with the train dataset
+--test for evaluating the model with the test dataset
+
+In the ./checkpoint folder, it contains all the trained models weights. 
+The submission.csv file is the output from the test dataset.
 
